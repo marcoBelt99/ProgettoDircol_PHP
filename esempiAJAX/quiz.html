@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <span id="d1">1) Qual'è la capitale della Francia?</span> <br>
+  <input type="radio" name="r1" value="11" id="r11">Avignone <br>
+  <input type="radio" name="r1" value="12" id="r21">Parigi <br>
+  <input type="radio" name="r1" value="13" id="r31">Lione <br>
+
+  <br>
+
+  <span id="d2">2) Qual'è la capitale della Spagna?</span> <br>
+  <input type="radio" name="r2" value="21" id="r12">Madrid <br>
+  <input type="radio" name="r2" value="22" id="r22">Londra <br>
+  <input type="radio" name="r2" value="23" id="r32">Barcellino<br>
+
+  <input type="hidden" id="id_domanda">
+
+  <script src="jquery-3.2.1.min.js"></script>
+
+  <script>
+    $("input:radio").on("click", gestisci_click);
+
+    function gestisci_click() {
+      let id_radio = this.id; //ad esempio r32
+
+      //assegno al campo hidden l`id dello span della domanda per sapere dopo
+      //cosa colorare di verde o rosso (corretta/sbagliata)
+      $("#id_domanda").val("d" + id_radio[2]); //se r32 -> d2
+
+      //chiamo il server
+      $.get("check_risposta.php", { dati_inviati: id_radio }, gestisci_risposta_server);
+
+    }
+
+    function gestisci_risposta_server(dati_ricevuti) {
+
+      let id_domanda = $("#id_domanda").val(); //se cliccato su r32 -> d2
+
+      switch (dati_ricevuti) {
+        case "corretta":
+          //coloriamo di verde il testo della domanda
+          $("#" + id_domanda).css("color", "green").css("font-weight", "bold");
+
+          break;
+
+        case "sbagliata":
+          //coloriamo di rosso il testo della domanda
+          $("#" + id_domanda).css("color", "red").css("font-weight", "bold");
+
+          break;
+
+        default:
+          alert(dati_ricevuti);
+          break;
+
+
+      }
+    }
+
+  </script>
+</body>
+
+</html>

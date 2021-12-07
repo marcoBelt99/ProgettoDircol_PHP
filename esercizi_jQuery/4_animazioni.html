@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3_stili_vini.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Animazioni</title>
+
+    <script>
+        $(function () {
+
+            $("#bottiglia1").mouseover(function () {
+                $("#chianti").show();
+                $("#chianti").animate({
+                    width: "60%",
+                    fontSize: "1.5em",
+                    borderWidth: "10px",
+                    marginLeft: "20px"
+                }, 1500);
+            });
+
+            $("#chianti").click(function () {
+                function completato() {
+                    $(this).css({
+                        width: "", fontSize: "", borderWidth: "", marginLeft: "",
+                    });
+                }
+                $(this).slideUp(1500, completato);
+            })
+        }); // fine function esterna
+    </script>
+</head>
+
+<body>
+
+
+    <img id="bottiglia1" src="images/chianti.png" height="200">
+    <p id="chianti" class="etichetta"> <b>Chianti</b> (Firenze, Siena, Arezzo, Pisa, Pistoia, Prato) <br> colore:
+        rubino
+        vivace
+        tendente al granato con l'invecchiamento; odore: intensamente vinoso, talvolta con profumo di mammola e con
+        carattere di finezza nella fase di invecchiamento; sapore: armonico e leggermente tannico, che si affina col
+        tempo al morbido vellutato.</p>
+</body>
+
+</html>

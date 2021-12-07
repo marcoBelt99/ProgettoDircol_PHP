@@ -1,0 +1,293 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@marcoBelt99 
+marcoBelt99
+/
+EsempiBootstrap
+Public
+1
+00
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+EsempiBootstrap/table.html
+@marcoBelt99
+marcoBelt99 Finito file table
+Latest commit b338446 on 1 Feb
+ History
+ 1 contributor
+254 lines (236 sloc)  8.81 KB
+   
+<!-- Esercizio: creare una tabella con l'elenco degli utenti registrati a un sito Web -->
+
+<!-- (Fare riferimento alla TABELLA 1) 
+    Per inserire una tabella si crea un contenitore <div> con classe container e, all'interno di esso,
+    si definisce la tabella con il tag <table>
+    - La classe table è la classe di base prevista per le tabelle in Bootstrap.
+    - (Notare l'uso degli attributi thead e tbody per usare il cosiddetto web semantico) 
+    - Anche per le tabelle, come già visto per le colonne del grid system, il contenuto si adatta alla larghezza della finestra
+    - È molto semplice personalizzare la resa grafica di un determinato componente: basta associarvi una classe;
+    
+    Sono diverse le classi che è possibile applicare ai tag <table> <tr> <td> ecc.. Alcune classi che posso usare sono:
+    (Vedere nel codice il punto in cui richiamo tali classi)
+    - Posso mettere anche più classi contemporaneamente: <table classe="table table-striped table-dark ..."
+    
+    - La classe table-striped   mi crea una tabella a strisce
+    - La classe table-dark      mi crea una tabella con colori scuri
+    - La classe table-bordered  mi crea una tabella con bordi su tutti i lati
+    - La classe table-hover     mi fa ottenere l'effetto di hover, cioè viene colorata solo la riga sulla quale si passa con il mouse
+    (Da qui in poi fare riferimento all TABELLA 2.)
+    Ai tag <tr>, <td> e <th> si possono associare classi speciali, chiamate contestuali.
+    Le classi contestuali colorano un elemento in modo da veicolare un'informazione associata al colore.
+    Le parole chiave da usare sono: active, primary, secondary, success, danger, warning e info.
+    (Da qui in poi fare riferimento alla TABELLA 3)
+    Le classi: bg-primary, bg-success, bg-warning, bg-danger e bg-info (dove bg indica il background) applicano colori
+    più decisi allo sfondo dei vari elementi di una tabella, usando una sintassi analoga: <tr class="bg-primary">
+    (Da qui in poi fare riferimento alla TABELLA 4)
+    Per creare una tabella che si adatti a schermi di dimensioni inferiori a 768px, è necessario assegnare al <div> che la contiene
+    la classe: table-responsive. In questo modo viene aggiunta una barra di scorrimento (scrollbar) orizzontale per poter visualizzare
+    le voci della tabella.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Importo gli stili CSS di bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <!-- Importo un file CSS per poter effettuare specifiche modifiche -->
+    <link rel="stylesheet" href="stiliTable.css" type="text/css" />
+
+    <title>Tabelle</title>
+  </head>
+  <body>
+    <!-- TABELLA 1-->
+    <div class="container">
+      <h3>Le tabelle con Bootstrap</h3>
+      <!-- Provare a mettere al posto di table-striped le varie classi menzionate sopra -->
+      <table class="table table-bordered table-hover">
+        <!-- Intestazione -->
+        <thead class="thead-dark">
+          <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <!-- Inserisco qualche riga  (Inserisco i dati nel corpo della tabella ) -->
+        <tbody>
+          <tr>
+            <td>Marco</td>
+            <td>Bianchi</td>
+            <td>marcob@gmail.com</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <td>Luigi</td>
+            <td>Verdi</td>
+            <td>lverdi@yahoo.it</td>
+            <td>abc</td>
+          </tr>
+          <tr>
+            <td>Andrea</td>
+            <td>Rossi</td>
+            <td>andrea.rossi@gmail.com</td>
+            <td>a1b2c3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <!-- #####################################################################################
+        Provo le classi contestuali 
+    -->
+    <!-- TABELLA 2 -->
+    <div class="container">
+      <h3>Le tabelle con Bootstrap</h3>
+      <!-- Provare a mettere al posto di table-striped le varie classi menzionate sopra -->
+      <table class="table">
+        <!-- Intestazione -->
+        <thead class>
+          <tr class="table-primary">
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <!-- Inserisco qualche riga  (Inserisco i dati nel corpo della tabella ) -->
+        <tbody>
+          <tr class="table-success">
+            <td>Marco</td>
+            <td>Bianchi</td>
+            <td>marcob@gmail.com</td>
+            <td>123</td>
+          </tr>
+          <tr class="table-danger">
+            <td>Luigi</td>
+            <td>Verdi</td>
+            <td>lverdi@yahoo.it</td>
+            <td>abc</td>
+          </tr>
+          <tr class="table-warning">
+            <td>Andrea</td>
+            <td>Rossi</td>
+            <td>andrea.rossi@gmail.com</td>
+            <td>a1b2c3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <!-- #######################################################################################
+        Provo la classe bg 
+    -->
+    <!-- TABELLA 3 -->
+    <div class="container">
+      <h3>Le tabelle con Bootstrap</h3>
+      <!-- Provare a mettere al posto di table-striped le varie classi menzionate sopra -->
+      <table class="table">
+        <!-- Intestazione -->
+        <thead class>
+          <tr class="bg-primary">
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <!-- Inserisco qualche riga  (Inserisco i dati nel corpo della tabella ) -->
+        <tbody>
+          <tr class="bg-success">
+            <td>Marco</td>
+            <td>Bianchi</td>
+            <td>marcob@gmail.com</td>
+            <td>123</td>
+          </tr>
+          <tr class="bg-danger">
+            <td>Luigi</td>
+            <td>Verdi</td>
+            <td>lverdi@yahoo.it</td>
+            <td>abc</td>
+          </tr>
+          <tr class="bg-warning">
+            <td>Andrea</td>
+            <td>Rossi</td>
+            <td>andrea.rossi@gmail.com</td>
+            <td>a1b2c3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <br />
+
+    <!-- #######################################################################################
+        Provo la classe table-responsive
+    -->
+    <!-- TABELLA 4 -->
+    <div class="table-responsive">
+      <h3>Le tabelle con Bootstrap</h3>
+      <!-- Provare a mettere al posto di table-striped le varie classi menzionate sopra -->
+      <table class="table">
+        <!-- Intestazione -->
+        <thead class>
+          <tr>
+            <th>Nome</th>
+            <th>Cognome</th>
+            <th>Email</th>
+            <th>Password</th>
+          </tr>
+        </thead>
+        <!-- Inserisco qualche riga  (Inserisco i dati nel corpo della tabella ) -->
+        <tbody>
+          <tr>
+            <td>Marco</td>
+            <td>Bianchi</td>
+            <td>marcob@gmail.com</td>
+            <td>123</td>
+          </tr>
+          <tr>
+            <td>Luigi</td>
+            <td>Verdi</td>
+            <td>lverdi@yahoo.it</td>
+            <td>abc</td>
+          </tr>
+          <tr>
+            <td>Andrea</td>
+            <td>Rossi</td>
+            <td>andrea.rossi@gmail.com</td>
+            <td>a1b2c3</td>
+          </tr>
+          <tr>
+            <td>Marco</td>
+            <td>Beltrame</td>
+            <td>marco01.beltrame@edu.unife.it</td>
+            <td>010203</td>
+          </tr>
+          <tr>
+            <td>ABCDEFGHIJKLMN</td>
+            <td>1234567891011121314151617181920212223242526</td>
+            <td>AAAAAAAAAABBBBBBBBBBBBBBBCCCCCCCCCCCCC.beltrame@edu.unife.it</td>
+            <td>741852963000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Al termine della pagina, prima della chiusura del tag body, si inseriscono i link alle librerie software di:  jQuery, -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Popper (per la gestione dei popup) -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- e di Javascript-->
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
+© 2021 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About

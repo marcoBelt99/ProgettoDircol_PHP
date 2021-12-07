@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controllo Dati</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>   
+    <!-- <script type="text/javascript">
+        function nascondi() {
+            var codice = document.getElementById("codice").value;
+            if (codice == null || codice == "") {
+                // alert("Attenzione: occorre inserire il codice");
+                // nascondi paragrafo
+                p.style.display = 'none';
+                return false;
+            }
+        }
+    </script> -->
+</head>
+
+<body>
+    <form name="form1" action="#" method="post">
+        codice: <input type="text" name="codice" id="codice">
+        <input type="submit" value="Invia" id="invia">
+        <input type="reset" value="Annulla" id="annulla">
+    </form>
+    <div id="paragrafo">
+        <p> Testo da nascondere quando si preme invio senza inserire nulla </p>
+    </div>
+
+</body>
+
+</html>
+</body>
+
+</html>
+
+<script>
+    // if ( $('input[type=text]').val() == null || $('input[type=text]').val() == "" ) {
+    //     $('#paragrafo').hide();
+    // } else {
+    //     $('#paragrafo').show();
+    // }
+    $('#codice').each.on('input', function () {
+        if (condition) {
+            $('#paragrafo').hide();
+        } else {
+            
+        }
+       
+    });
+
+</script>

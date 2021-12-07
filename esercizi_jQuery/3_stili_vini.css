@@ -1,0 +1,15 @@
+h1 {
+    color: navy;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 54px;
+}
+
+.etichetta {
+    position: absolute;
+    left: 100px;
+    background-color: #bca;
+    text-align: left;
+    width: 400px;
+    border: 1px solid green;
+    display: none;
+}

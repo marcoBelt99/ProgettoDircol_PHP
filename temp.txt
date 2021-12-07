@@ -1,0 +1,101 @@
+foreach ($linee as $i => $linea) {
+        // Stampa la linea $linea (che parte da 0)
+        // La variabile $linea diventa la stringa i-esima
+        // echo "Linea numero $i: $linea" . "<br>";
+        // Provo a splittare la linea in parole divise da un tab '\t'
+        $token = strtok($linea, "\t");
+        while ($token != false) {
+            // Stampo l'intera riga
+            // echo "$token<br>";
+            // Creo un nuovo oggetto di tipo Utente
+            $U = new Utente('', '', '', '', 0); // campo dato del nodo
+            $U->Username = $token;
+            $token = strtok("\t");
+            $U->Nome = $token;
+            // Prendi il prossimo pezzetto della linea
+            $token = strtok("\t");
+            $U->Cognome = $token;
+            // Prendi il prossimo pezzetto della linea
+            $token = strtok("\t");
+            $U->Commento = $token;
+            // Prendi il prossimo pezzetto della linea
+            $token = strtok("\t");
+            $U->Voto = (int)$token;
+            // Prendi il prossimo pezzetto della linea
+            $token = strtok("\t");
+            // Inserisco l'oggetto in testa alla lista
+            $listaUtenti->insTesta($U);
+            echo "<br>" . $listaUtenti->head->__toString() . "<br>";
+        }
+        // echo "<br>";
+    }
+
+
+
+<!-- VISUALIZZA LISTA UTENTI -->
+    <!-- TABELLA CAPI -->
+    <h2 id="titolo1"> LISTA UTENTI </h2>
+
+    <table id='table-center1' class="table">
+        <thead id="thead1">
+            <tr>
+                <th>Username</th>
+                <th>Nome</th>
+                <th>Cognome</th>
+                <th>Commento</th>
+                <th>Voto</th>
+            </tr>
+        </thead>
+        <!-- Corpo della tabella -->
+        <tbody>
+            <?php
+            // Salvataggio 
+            while ($listaUtenti != null) { // Finchè la lista di utenti è diversa da NULL
+            ?>
+                <!-- Crea una nuova riga -->
+                <tr>
+                    <!-- Singolo elemento della riga -->
+                    <td>
+                        <?php
+                        echo $listaUtenti->head->dato->getUsername();
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $listaUtenti->head->dato->getNome();
+                        ?>
+                    </td>
+                    <td>
+
+                        <?php
+                        echo $listaUtenti->head->dato->getCognome();
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $listaUtenti->head->dato->getCommento();
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                        echo $listaUtenti->head->dato->getVoto();
+                        ?>
+                    </td>
+                </tr>
+            <?php
+                // Passa al prossimo elemento
+                $listaUtenti->head = $listaUtenti->head->next;
+            } // chiudo il while aperto prima
+            ?>
+
+        </tbody>
+    </table>
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="callout callout-info divCallout" id="calloutCapo">
+                <h4>Tabella Capi</h4>
+                Per rappresentare i singoli capi di abbigliamento in vendita nei negozi;
+            </div>
+        </div>
+    </div>
+    <!-- FINE LISTA UTENTI -->

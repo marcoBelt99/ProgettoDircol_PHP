@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1_stili.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Galleria di immagini</title>
+
+    <script>
+        $(function () {
+            var i = 1;
+            var max = 14;
+            $("#foto").attr("src", "./images/img" + i + ".jpg");
+
+            // All'evento click sull'elemento di id back, esegui le istruzioni 
+            $("#back").click(function name(params) {
+                i = i - 1;
+                if (i < 1) {
+                    i = 1;
+                }
+                $("#foto").attr("src", "./images/img" + i + ".jpg");
+            });
+
+            // All'evento click sull'elemento di id next, esegui le istruzioni 
+            $("#next").click(function name(params) {
+                i = i + 1;
+                if (i > max) {
+                    i = max;
+                }
+                $("#foto").attr("src", "./images/img" + i + ".jpg");
+            });
+
+
+        });
+    </script>
+</head>
+
+<body>
+    <form>
+        <div id="galleria">
+            <input type="button" value="Indietro" id="back">
+            <img id="foto" alt="" src="" align="absmiddle">
+            <input type="button" value="Avanti" id="next">
+        </div>
+    </form>
+</body>
+
+</html>

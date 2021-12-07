@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1_stili.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        // Funzione in JQuery
+        $(function () {
+            // Nascondo l'elemento con id glossario
+            $("#glossario").hide();
+
+            // All'evento click sull'elemento con id titolo, eseguo le istruzioni scritte dentro la function
+            $("#titolo").click(function () {
+                $(".definizione").hide();
+                $("#glossario").toggle("slow");
+            });
+
+            // All'evento click sugli elementi p di classe testo, eseguo le istruzioni scritte dentro la function
+            $("p.testo").click(function () {
+                $(".definizione").show("slow");
+                // $(".definizione").addClass("sfondogiallo");
+                $(".definizione").css("background", "yellow");
+                // $("h1").addClass("testatablu");
+                $("h1").css("color", "blue");
+            });
+
+            // All'evento click sugli elementi p di classe definizione, eseguo le istruzioni scritte dentro la function
+            $("p.definizione").click(function () {
+                $(".definizione").hide;
+                // $("h1").removeClass("testatablu");
+                $("h1").css("color", "black");
+            });
+        });
+    </script>
+    <title>Definizioni</title>
+</head>
+
+<body>
+    <div id="titolo">
+        <h1>I diversi tipi di connessione a Internet</h1>
+    </div>
+    <div id="glossario">
+        <p class="testo">ADSL</p>
+        <p class="definizione">Asymmetric Digital Subscriber Line. Permette velocità fino a 30 Mbit/s in downstream e
+            3,5 Mbit/s in upstream</p>
+        <p class="testo">Fibra ottica</p>
+        <p class="definizione">Utilizza segnali luminosi. Permette velocità teoriche fino a qualche gigabit al secondo
+        </p>
+        <p class="testo">Satellitare</p>
+        <p class="definizione">Utilizza uno speciale modem satellitare. E' la più costosa ma è disponibile in ogni punto
+            del pianeta</p>
+    </div>
+</body>
+
+</html>

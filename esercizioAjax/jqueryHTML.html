@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metodo .html()</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // Sostituzione dei paragrafi
+            // $("button").click(function () {
+            //     $("p").html("Testo <b> Diverso! </b>");
+            // });
+
+            // Sostituzione del paragrafo con id 'tab' con una tabella quando clicco sul text-box di id 'cliccare'
+            $("button").click(function () {
+                $("p#par2").html(
+                    // "<table><tr><th>Azienda</th><th>Contatto</th><th>Nazione</th></tr><tr><td>Alfreds Futterkiste</td><td>Maria Anders</td><td>Germany</td></tr><tr><td>Centro comercial Moctezuma</td><td>Francisco Chang</td><td>Mexico</td></tr><tr><td>dircol</td><td>Marco Beltrame</td><td>Italia</td></tr></table > "
+                        "<p>ciao</p>");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <button>Cambia il contenuto di tutti i paragrafi</button>
+    <button type="text" name="" id="cliccare">Cambia il contenuto del paragrafo con id 'tab'</button>
+
+
+    <p>Paragrafo 1</p>
+    <p id="#par2">Paragrafo 2</p>
+    <p>Paragrafo 3</p>
+    <p>Paragrafo 4</p>
+    <p>Paragrafo 5</p>
+    <p>Paragrafo 6</p>
+    <p>Paragrafo 7</p>
+    <p>Paragrafo 8</p>
+    <p>Paragrafo 9</p>
+    <p>Paragrafo 10</p>
+    <p>Paragrafo 11</p>
+    <p>Paragrafo 12</p>
+    <p>Paragrafo 13</p>
+    <p>Paragrafo 14</p>
+    <p>Paragrafo 15</p>
+    <p>Paragrafo 16</p>
+
+
+
+</body>
+
+</html>

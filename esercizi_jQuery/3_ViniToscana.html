@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="3_stili_vini.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <title>Vini di Toscana</title>
+
+    <script>
+        $(function () {
+            $("#bottiglia1").mouseover(function () {
+                $("#chianti").fadeIn("slow");
+            }).mouseout(function () {
+                $("#chianti").fadeOut("fast");
+            });
+            $("#bottiglia2").mouseover(function () {
+                $("#brunello").fadeIn("slow");
+            }).mouseout(function () {
+                $("#brunello").fadeOut("fast");
+            });
+            $("#bottiglia3").mouseover(function () {
+                $("#morellino").fadeIn("slow");
+            }).mouseout(function () {
+                $("#morellino").fadeOut("fast");
+            });
+            // Con il metodo find si trovano tutti i tag img all'interno dell'id regione ai quali si applica il metodo toggle
+            $("#regione").click(function () {
+                // con il selettore this indico l'elemento corrente
+                $(this).find("img").toggle();
+            });
+        }); // fine function esterna
+    </script>
+</head>
+
+<body>
+    <h1>Vini di Toscana</h1>
+    <div id="vini">
+        <img id="bottiglia1" src="images/chianti.png" height="200">
+        <p id="chianti" class="etichetta"> <b>Chianti</b> (Firenze, Siena, Arezzo, Pisa, Pistoia, Prato) <br> colore:
+            rubino
+            vivace
+            tendente al granato con l'invecchiamento; odore: intensamente vinoso, talvolta con profumo di mammola e con
+            carattere di finezza nella fase di invecchiamento; sapore: armonico e leggermente tannico, che si affina col
+            tempo al morbido vellutato.</p>
+        <img id="bottiglia2" src="images/brunello.png" height="200">
+        <p id="brunello" class="etichetta"><b>Brunello di Montalcino </b> (Siena) <br>colore: rosso rubino intenso
+            tendente al
+            granato; odore: caratteristico ed intenso; sapore: asciutto, caldo, un po' tannico, robusto, armonico,
+            persistente. </p>
+        <img id="bottiglia3" src="images/morellino.png" height="200">
+        <p id="morellino" class="etichetta"><b>Morellino di Scansano</b> (Grosseto) <br> colore: rosso rubino tendente
+            al
+            granato
+            con l'invecchiamento; odore: vinoso e, con l'invecchiamento, profumato, etereo, intenso, gradevole, fine;
+            sapore: asciutto, austero, caldo, leggermente tirannico</p>
+    </div>
+    <div id="regione">
+        <img src="images/toscana.png">
+        <img src="images/toscana_big.png" style="display: none;">
+    </div>
+</body>
+
+</html>
