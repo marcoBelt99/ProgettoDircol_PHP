@@ -1,8 +1,8 @@
 <?php
 // Variabili da settare
 $servername = "localhost";
-$username = "root"; // --> root (a casa mia: marco)
-$password = ""; // --> "" !!! (a casa mia: password)
+$username = "marco"; // --> root (a casa mia: marco)
+$password = "password"; // --> "" !!! (a casa mia: password)
 $db = "dircol"; // Nome del database
 
 $conn = new mysqli($servername, $username, $password, $db);

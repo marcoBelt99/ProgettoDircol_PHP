@@ -24,13 +24,17 @@ include_once('listeCollegate.php');
             color: #7952b3;
         }
 
-        .card-body {
-            border: 1px solid #7952b3;
+        .card-title {
+            color: #5e0add;
         }
 
-        .list-group-item {
+        /* .card-body {
             border: 1px solid #7952b3;
-        }
+        } */
+
+        /* .list-group-item {
+            border: 1px solid #7952b3;
+        } */
     </style>
 
 </head>
@@ -54,7 +58,7 @@ include_once('listeCollegate.php');
         $contaCardPerRiga = 1;
         while ($riga = mysqli_fetch_array($risultato)) {
         ?>
-            <div class="card" style="width: 18rem;" class="stileCard">
+            <div class="card" style="width: 18rem;">
                 <?php
                 // Ottengo il nome dell'immagine
                 $Immagine = $riga["Immagine"];
@@ -104,3 +108,9 @@ include_once('listeCollegate.php');
 </body>
 
 </html>
+
+<script>
+    $("h2").css("text-align", "center");
+
+    
+</script>

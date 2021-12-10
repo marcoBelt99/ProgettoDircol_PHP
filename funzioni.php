@@ -266,8 +266,11 @@ function caricaListaUtenti()
     $token = strtok($linea, "\t");  // Provo a splittare la linea in parole divise da un tab '\t'
     while ($token != false) {
       // Stampo l'intera riga // echo "$token<br>";
-      $Ut = new Utente('', '', '', '', 0);  // Creo un nuovo oggetto di tipo Utente che sarà il campo dato del nodo
+      $Ut = new UtenteOrdinario('', '', '', '', '', 0);  // Creo un nuovo oggetto di tipo Utente che sarà il campo dato del nodo
       $Ut->Username = $token;
+      // Prendi il prossimo pezzetto della linea
+      $token = strtok("\t");
+      $Ut->Password = $token;
       // Prendi il prossimo pezzetto della linea
       $token = strtok("\t");
       $Ut->Nome = $token;
