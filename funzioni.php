@@ -96,6 +96,13 @@ function navbar()
             </a>
           </li>
 
+          <!-- Gestione Modelli -->
+          <li class="nav-item">
+            <a class="nav-link text-nowrap" href="gestioneModelli.php" target="_blank">
+              <i class="bi bi-bag-fill"></i> Acquista Modelli
+            </a>
+          </li>
+
           <!-- Visualizza tabelle -->
           <li class="nav-item">
             <a class="nav-link text-nowrap" href="visualizzaTabelle.php" target="_blank">

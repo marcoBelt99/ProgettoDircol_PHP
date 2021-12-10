@@ -96,6 +96,7 @@ INSERT INTO `dipendenti` (`Matricola`, `Cognome`, `Nome`, `CodiceFiscale`, `Qual
 DROP TABLE IF EXISTS `modelli`;
 CREATE TABLE IF NOT EXISTS `modelli` (
   `CodModello` int(4) NOT NULL AUTO_INCREMENT,
+  `Immagine` VARCHAR(200) NOT NULL,
   `Nome` text NOT NULL,
   `Descrizione` text NOT NULL,
   `PrezzoListino` float NOT NULL,
@@ -108,12 +109,12 @@ TRUNCATE TABLE `modelli`;
 -- Dump dei dati per la tabella `modelli`
 --
 
-INSERT INTO `modelli` (`Nome`, `Descrizione`, `PrezzoListino`, `Genere`, `Collezione`) VALUES
-( 'Gonna 2.0', 'Gonna per ragazze di cotone', 23, 'F', 'Autunnale'),
-( 'CapoGuc', 'Cappellino Gucci per ragazzi verde ed oro', 45, 'F', 'Estiva'),
-( 'MaglioneG', 'Maglione Zara giallo', 35, 'M', 'Invernale'),
-( 'PantaBlu', 'Pantaloni blu Sorbino', 49.9, 'M', 'Primaverile'),
-( 'Felpa 1.5', 'Felpa di paille', 66, 'F', 'Autunnale');
+INSERT INTO `modelli` (`Immagine`,`Nome`, `Descrizione`, `PrezzoListino`, `Genere`, `Collezione`) VALUES
+( 'gonna.jpg', 'Gonna 2.0', 'Gonna per ragazze di cotone', 23, 'F', 'Autunnale'),
+( 'CappellinoGucci.jpg', 'CapoGuc', 'Cappellino Gucci per ragazzi verde ed oro', 45, 'F', 'Estiva'),
+( 'MaglioneZaraGiallo.jpg',  'MaglioneG', 'Maglione Zara giallo', 35, 'M', 'Invernale'),
+( 'PantaloniBlu.jpg',  'PantaBlu', 'Pantaloni blu Sorbino', 49.9, 'M', 'Primaverile'),
+( 'FelpaDiPile.jpg',  'Felpa 1.5', 'Felpa di paille', 66, 'F', 'Autunnale');
 
 -- --------------------------------------------------------
 

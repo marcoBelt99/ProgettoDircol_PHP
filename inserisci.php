@@ -252,7 +252,10 @@ include_once('funzioni.php');
                 <!-- $ _SERVER [ 'PHP_SELF'] è una variabile d'ambiente supportata da tutte le piattaforme che indica il nome del file su cui è attualmente in esecuzione lo script PHP rispetto alla root del Web server.
                                                                                                     In pratica si tratta del nome della pagina corrente; lo puoi utilizzare quando il codice che processa i dati del form si trova nella stessa pagina in cui si trova il form -->
                 <div class="form-group">
-
+                    <p>
+                        <label for="Immagine">Immagine del modello:&nbsp;</label>
+                        <input type="file" name="Immagine" value="Inserire file" id="inputInserisciImmagineModelli" onchange="hideDiv('divInserisciImmagine_Modelli',this); showDiv('divInserisciImmagine_Modelli',this)"/>
+                    </p>
                     <p>
                         <label for="Nome">Nome del modello:&nbsp;</label>
                         <input type="text" name="Nome" id="inputInserisciNomeModelli" onchange="hideDiv('divInserisciNome_Modelli',this); showDiv('divInserisciNome_Modelli',this)"></input>
@@ -261,7 +264,9 @@ include_once('funzioni.php');
 
                     <p>
                         <label for="Descrizione">Descrizione del modello:&nbsp;</label>
-                        <input type="text" name="Descrizione" id="inputInserisciDescrizioneModelli" onchange="hideDiv('divInserisciDescrizione_Modelli',this); showDiv('divInserisciDescrizione_Modelli',this)"></input>
+                    </p>
+                    <p>
+                        <textarea type="text" name="Descrizione" id="inputInserisciDescrizioneModelli" onchange="hideDiv('divInserisciDescrizione_Modelli',this); showDiv('divInserisciDescrizione_Modelli',this)"></textarea>
                     </p>
 
                     <p>
@@ -291,6 +296,7 @@ include_once('funzioni.php');
     <!-- QUERY DI INSERIMENTO -->
     <?php
     // Dichiaro le variabili che mi servono
+    $Immagine = null;
     $Nome = null;
     $Descrizione = null;
     $PrezzoListino = null;
@@ -299,11 +305,27 @@ include_once('funzioni.php');
 
     if (isset($_POST['InserisciModello'])) // isset — Determine if a variable is declared and is different than null
     {
+
+        // Controllo di aver inserito correttamente l'immagine
+        if (isset($_POST['InserisciModello']) && isset($_POST["Immagine"]) && (!empty($_POST["Immagine"]))) {
+            $Immagine = $_POST["Immagine"];
+        } else {
+    ?>
+            <div class="container divMessaggio" id="divInserisciImmagine_Modelli">
+                <div class="alert alert-warning alert-dismissible">
+                    <!-- style="display:inline-block;" -->
+                    <strong>Attenzione: </strong>Devi inserire il percorso in cui è contenuta l'immagine
+                </div>
+            </div>
+            <!-- <p class="text-warning testoOmbreggiato">Devi inserire il nome del modello</p> -->
+        <?php
+        }
+
         // Controllo di aver inserito il nome
         if (isset($_POST['InserisciModello']) && isset($_POST["Nome"]) && (!empty($_POST["Nome"]))) {
             $Nome = $_POST["Nome"];
         } else {
-    ?>
+        ?>
             <div class="container divMessaggio" id="divInserisciNome_Modelli">
                 <div class="alert alert-warning alert-dismissible">
                     <!-- style="display:inline-block;" -->
@@ -391,9 +413,9 @@ include_once('funzioni.php');
         }
 
         // COMANDO SQL  !! Per le stringhe devo usare gli apici !!
-        if (($Nome != null) && ($Descrizione != null) && ($PrezzoListino != null) && ($Genere != null) && ($Collezione != null)) {
+        if ( ($Immagine != null) && ($Nome != null) && ($Descrizione != null) && ($PrezzoListino != null) && ($Genere != null) && ($Collezione != null)) {
             // Ci metto solo i campi che mi interessano
-            $strSQL = "INSERT INTO modelli (Nome, Descrizione, PrezzoListino, Genere, Collezione) VALUES ('$Nome','$Descrizione','$PrezzoListino','$Genere','$Collezione')";
+            $strSQL = "INSERT INTO modelli (Immagine, Nome, Descrizione, PrezzoListino, Genere, Collezione) VALUES ('$Immagine', '$Nome','$Descrizione','$PrezzoListino','$Genere','$Collezione')";
             $risultato = mysqli_query($conn, $strSQL);
             // Controllo del corretto inserimento
             if ($risultato) {
