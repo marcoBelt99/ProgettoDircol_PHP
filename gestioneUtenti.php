@@ -215,6 +215,8 @@ include_once('listeCollegate.php');
 
                     // INSERIMENTO
                     if ($U != null && (strcmp($U->Username, '') != 0) && (strcmp($U->Password, '') != 0) && (strcmp($U->Nome, '') != 0)  && (strcmp($U->Cognome, '') != 0) && (strcmp($U->Commento, '') != 0) && ($U->Voto != 0)) { // Se l'oggetto $U non è null
+                        echo "<br>". $U->Password . "<br>";
+                        echo "<br>". $_POST["PasswordUtente"] . "<br>";
                         // Apro il file in aggiunta
                         $fp = fopen("feedback.txt", "a") or die("Non riesco ad aprire il file: feedback.txt!");
                         // Lo salvo nel file
@@ -699,6 +701,7 @@ include_once('listeCollegate.php');
                     <thead id="thead1">
                         <tr>
                             <th>Username</th>
+                            <th>Password</th>
                             <th>Nome</th>
                             <th>Cognome</th>
                             <th>Commento</th>
@@ -718,6 +721,11 @@ include_once('listeCollegate.php');
                                 <td>
                                     <?php
                                     echo $temp->dato->getUsername();
+                                    ?>
+                                </td>
+                                <td>
+                                    <?php
+                                    echo $temp->dato->getPassword();
                                     ?>
                                 </td>
                                 <td>

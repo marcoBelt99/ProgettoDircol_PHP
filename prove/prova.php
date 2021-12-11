@@ -1,5 +1,5 @@
 <?php
-// phpinfo();
+phpinfo();
     $codice = $_POST["codice"];
     if ($codice > 10) {
         echo "maggiore di 10";

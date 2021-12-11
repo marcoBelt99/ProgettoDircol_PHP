@@ -14,3 +14,6 @@ brg_Enrico	593oopProg!	Enrico	Bregoli	Che schifo di sito, se potessi dare 0 stel
 marklenders99	OllyEBenji1	Mark	Lenders	Sito all'altezza delle mie aspettative	3
 adelaide	adxmik45?	Adele	Serain	Mi e' piaciuto questo servizio di compravendita online di vestiti	4
 mike	Pileit9899^	Michael	Pilotto	Carino dai, gli metto il massimo	5
+monique	Monica	Barbieri	Sisi, molto bello	4
+yarby		Alfred			Yarbus			Si dai ci può stare come sito		3
+provaUsername	provaNome	provaCognome	provaDidascalia commento	5
